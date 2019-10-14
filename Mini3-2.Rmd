@@ -61,7 +61,7 @@ a. Why isn't this dataset tidy?
 
 **Your answer here**
 
-b. Use the `spread()` function to create a `group` variable and a `povRate` variable that combine the information from the `White` through `Total` columns.  Call this new dataset `povData3`.
+b. Use the `spread()` function to create `death`, `pm10`, and `tempF` columns that contain the values for these measures  from the dataset.  Call this new dataset `baltData2s`.
 ```{r}
 # your code here
 ```
