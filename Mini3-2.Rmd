@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**Due Sunday, October 20 @ 11:59pm through Github**
+**Due Sunday, October 18 @ 11:59pm through Github**
 
 Your next assignment is to practice tidying data using the functions in the `tidyr` package.
 
@@ -23,21 +23,24 @@ library(tidyverse)
 This data gives poverty rates by racial and ethnic groups for each state.  You read this data into R in the last mini-assignment. 
 ```{r}
 # read in the data
-povData1 <- read_csv("data/Poverty Rate By State Race - raw_data.csv", skip=2, n_max = 53, na = c("N/A"))
+povData1 <- read_csv("data/Poverty Rate By State Race - raw_data.csv", 
+                     skip = 2, 
+                     n_max = 53, 
+                     na = c("N/A"))
 povData1
 
 # remove the `Footnotes` column, which isn't a real variable
 povData2 <- povData1 %>%
   select(-Footnotes)
 
-povData2
+povData2 %>% print(width = Inf)
 ```
 
 a. Why isn't this dataset tidy?
 
 **Your answer here**
 
-b. Use the `gather()` function to create a `group` variable and a `povRate` variable that combine the information from the `White` through `Total` columns.  Call this new dataset `povData3`.
+b. Use the `pivot_longer()` function to create a `group` variable and a `povRate` variable that combine the information from the `White` through `Total` columns.  Call this new dataset `povData3`.
 ```{r}
 # your code here
 ```
@@ -53,15 +56,16 @@ c. If you wanted to create a dataset that just had the poverty rates for the Uni
 This file contains mortality and pollution data daily for Baltimore for January 1987. You read this data into R in the last mini-assignment. 
 ```{r}
 # read in the data
-baltData1 <- read_csv("data/balt2.csv")
+baltData1 <- read_csv("data/balt2.csv",
+                      col_types = cols(date = col_date(format = "%m/%d/%y")))
 baltData1
 ```
 
-a. Why isn't this dataset tidy?
+a. Why isn't this dataset tidy?  You might need to view the dataset in different ways to figure out why it isn't tidy.
 
 **Your answer here**
 
-b. Use the `spread()` function to create `death`, `pm10`, and `tempF` columns that contain the values for these measures  from the dataset.  Call this new dataset `baltData2s`.
+b. Use the `pivot_wider()` function to create `death`, `pm10`, and `tempF` columns that contain the values for these measures from the dataset.  Call this new dataset `baltData2s`.
 ```{r}
 # your code here
 ```
@@ -75,17 +79,20 @@ This data gives gives the locations of all of the red light cameras in Baltimore
 rlData <- read_csv("data/Red_Light_Cameras.csv", 
                     col_types = cols(installationDate = col_date(format="%m/%d/%Y"))
 )
-rlData
+
+rlData %>% print(width = Inf)
 ```
 
 This dataset is actually pretty tidy, but lets try to make it even better.
 
-a. Separate the `Location 1` column into separate `Latitude` and `Longitude` columns.  (You don't know how to get rid of the parentheses yet, so I will do that for you in `rlData2`)  Call your new dataset `rlData3`.
+a. Separate the `Location 1` column into separate `Latitude` and `Longitude` columns.  (You don't know how to get rid of the parentheses yet, so I will do that for you in the code below to create `rlData2`.)  After separating, call your new dataset `rlData3`.
+
 ```{r}
 rlData2 <- rlData %>%
   mutate(`Location 1` = str_replace(`Location 1`, "\\(", "")) %>%
   mutate(`Location 1` = str_replace(`Location 1`, "\\)", ""))
-rlData2
+
+rlData2 %>% print(width = Inf)
 
 
 # your code here
@@ -102,7 +109,7 @@ ___
 When you are finished with your assignment, knit your file and submit through Github. To do so, follow the steps below.  (If your document didn't successfully knit, please reach out to me over email at `phbiostats@jhu.edu` so I can help you trouble-shoot the issue.)
 
 * First you need to **commit** the changes you've made to the document.  Click the colorful Git button at the top of the RStudio window and select "Commit" from the menu.
-* In the window that opens, **stage** your changes by clicking the check boxes next to the `Mini0-1.Rmd` and `Mini0-1.html` files.
+* In the window that opens, **stage** your changes by clicking the check boxes next to the `Mini3-2.Rmd` file.
 * In the "Commit message" box, type a short description of what changes you've made, something like: `Completed assignment`
 * Click the "Commit" button on the bottom right.
 * You'll see a window that will tell you about the changes that you've made.  Click "Close" to close the window.  You've successfully committed! You can close this commit window now.
