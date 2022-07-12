@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**Due Monday, October 18 at the end of class**
+**Due Thursday October 20 through GitHub**
 
 Your next assignment is to practice tidying data using the functions in the `tidyr` package.
 
@@ -73,7 +73,7 @@ b. Use the `pivot_wider()` function to create `death`, `pm10`, and `tempF` colum
 
 3. `Red_Light_Cameras.csv`
 
-This data gives gives the locations of all of the red light cameras in Baltimore City (from Open Baltimore [https://data.baltimorecity.gov/Transportation/Red-Light-Cameras/ydjd-febd](website)).  You read this data into R in the last mini-assignment. 
+This data gives gives the locations of all of the red light cameras in Baltimore City (from Open Baltimore [website](https://data.baltimorecity.gov/datasets/baltimore::red-light-cameras-1/explore?location=39.318738%2C-76.621100%2C12.64)).  You read this data into R in the last mini-assignment. 
 ```{r}
 # read in data
 rlData <- read_csv("data/Red_Light_Cameras.csv", 
