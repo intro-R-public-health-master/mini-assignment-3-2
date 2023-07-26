@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**Due Thursday October 19 through GitHub**
+**Due Sunday October 22 through GitHub**
 
 Your next assignment is to practice tidying data using the functions in the `tidyr` package.
 
