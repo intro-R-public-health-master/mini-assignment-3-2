@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**Due Thursday October 20 through GitHub**
+**Due Thursday October 19 through GitHub**
 
 Your next assignment is to practice tidying data using the functions in the `tidyr` package.
 
@@ -83,7 +83,7 @@ rlData <- read_csv("data/Red_Light_Cameras.csv",
 rlData %>% print(width = Inf)
 ```
 
-This dataset is actually pretty tidy, but lets try to make it even better.
+This dataset is actually pretty tidy, but let's try to make it even better.
 
 a. Separate the `Location 1` column into separate `Latitude` and `Longitude` columns.  (You don't know how to get rid of the parentheses yet, so I will do that for you in the code below to create `rlData2`.)  After separating, call your new dataset `rlData3`.
 
