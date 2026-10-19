@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**Due Sunday October 19 through GitHub**
+**Due Sunday October 25 through GitHub**
 
 Your next assignment is to practice tidying data using the functions in the `tidyr` package.
 
@@ -106,7 +106,7 @@ b. Now try to separate `Location 1` column into separate `Latitude` and `Longitu
 
 ___
 
-When you are finished with your assignment, knit your file and submit through Github. To do so, follow the steps below.  (If your document didn't successfully knit, please reach out to me over email at `phbiostats@jhu.edu` so I can help you trouble-shoot the issue.)
+When you are finished with your assignment, knit your file and submit through Github. To do so, follow the steps below.  (If your document didn't successfully knit, please reach out to me over email on Canvas so I can help you trouble-shoot the issue.)
 
 * First you need to **commit** the changes you've made to the document.  Click the colorful Git button at the top of the RStudio window and select "Commit" from the menu.
 * In the window that opens, **stage** your changes by clicking the check boxes next to the `Mini3-2.Rmd` file.
